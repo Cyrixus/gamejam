@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ResourceTracker.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FoodTracker.cs">
     <Files>
       <File FileName="Assets\ClickEntity.cs" Line="5" Column="49" />
       <File FileName="Assets\ResourceTracker.cs" Line="43" Column="39" />
+      <File FileName="Assets\FoodTracker.cs" Line="7" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -40,8 +40,16 @@ public class ResourceTracker : MonoBehaviour {
 		return population * BASE_CONSUMPTION_PER_CAPITA;
 	}
 
-	public void foodImpulse(float food) {
-		this.food += food;
+	public bool foodImpulse(float food) {
+		if (this.food + food >= 0.0f) {
+			this.food += food;
+			return true;
+		}
+		return false;
+	}
+
+	public void addFoodVelocity(float foodVel) {
+		foodVelocity += foodVel;
 	}
 
 	public float getFood() {
