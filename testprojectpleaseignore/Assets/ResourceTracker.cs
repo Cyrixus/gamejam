@@ -10,7 +10,7 @@ public class ResourceTracker : MonoBehaviour {
 
 	// Singleton instance
 	public static ResourceTracker instance {get; private set;}
-
+	
 	private float food; // Current total food
 	private float foodVelocity; // Rate of food production
 
@@ -19,7 +19,7 @@ public class ResourceTracker : MonoBehaviour {
 
 	/** Lifecycle Methods **/
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		food = STARTING_FOOD;
 		population = STARTING_POP;
 	}
@@ -30,7 +30,7 @@ public class ResourceTracker : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 		// Calculate current consumption
 		float consumption = getConsumption() * Time.deltaTime;
 	}
@@ -40,7 +40,13 @@ public class ResourceTracker : MonoBehaviour {
 		return population * BASE_CONSUMPTION_PER_CAPITA;
 	}
 
-	public bool foodImpulse(float food) {
+	// FOOD
+	public float getFood() {
+		return food;
+	}
+
+	public bool applyFoodImpulse(float food) {
+		// Food is not allowed to dip below 0 due to a Food Impulse event.
 		if (this.food + food >= 0.0f) {
 			this.food += food;
 			return true;
@@ -48,11 +54,25 @@ public class ResourceTracker : MonoBehaviour {
 		return false;
 	}
 
-	public void addFoodVelocity(float foodVel) {
+	public void applyFoodVelocity(float foodVel) {
 		foodVelocity += foodVel;
 	}
 
-	public float getFood() {
-		return food;
+	// POPULATION
+	public float getPopulation() {
+		return population;
+	}
+
+	public bool applyPopulationImpulse(float pop) {
+		// Population is not allowed to dip below 0 due to a Population Impulse event.
+		if (this.population + pop >= 0.0f) {
+			this.population += pop;
+			return true;
+		}
+		return false;
+	}
+
+	public void applyPopulationVelocity(float popVel) {
+		populationVelocity += popVel;
 	}
 }

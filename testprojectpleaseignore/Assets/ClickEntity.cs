@@ -7,17 +7,17 @@ public class ClickEntity : MonoBehaviour {
 	private float foodPerClick;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		foodPerClick = BASE_FOOD_PER_CLICK;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 	
 	}
 
 	void OnMouseDown() {
 		// Increment counter
-		ResourceTracker.instance.foodImpulse(foodPerClick);
+		ResourceTracker.instance.applyFoodImpulse(foodPerClick);
 	}
 }
