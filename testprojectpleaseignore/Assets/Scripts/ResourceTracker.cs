@@ -52,6 +52,9 @@ public class ResourceTracker : MonoBehaviour {
 		// Calculate current consumption & Eat
 		float consumption = getFoodConsumption() * foodConsumptionMultiplier * Time.deltaTime;
 		food -= consumption;
+		if (food <= 0.0f) {
+			food = 0.0f;
+		}
 
 		// Determine if it's time for a new population member
 		while (food >= foodNextPop) {
