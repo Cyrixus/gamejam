@@ -1,23 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using System;
 using System.Collections;
 
 public class FoodClicker : MonoBehaviour {
 	private static float BASE_FOOD_PER_CLICK = 1.0f;
 
+	// Singleton Implementation
+	public FoodClicker instance { get; private set; }
+	void Awake() {
+		instance = this;
+	}
+
+	// Text Prefab for displaying clicked amount.
+	public Text textPrefab;
+
+	// Food Per Click
 	private float foodPerClick;
 
 	// Use this for initialization
 	void Start() {
 		foodPerClick = BASE_FOOD_PER_CLICK;
 	}
-	
-	// Update is called once per frame
-	void Update() {
-	
-	}
 
 	void OnMouseDown() {
 		// Increment counter
 		ResourceTracker.instance.applyFoodImpulse(foodPerClick);
+
+		// Display a HamText Prefab
+		Text hamText = (Text)Instantiate (textPrefab, transform.position, Quaternion.identity);
+		hamText.text = String.Format ("{0,5:N1}", foodPerClick);
 	}
 }
