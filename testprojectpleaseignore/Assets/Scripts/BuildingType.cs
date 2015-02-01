@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BuildingType : MonoBehaviour {
 
-	private string _buildingID;
-	public string BuildingID {
+	private int _buildingID;
+	public int BuildingID {
 		get {
 			return _buildingID;
 		}
@@ -13,10 +13,10 @@ public class BuildingType : MonoBehaviour {
 	private string _typeName;
 	public string TypeName {
 		get {
-			return _type;
+			return _typeName;
 		}
 		set {
-			_type = value;
+			_typeName = value;
 		}
 	}
 
@@ -66,7 +66,7 @@ public class BuildingType : MonoBehaviour {
 		_count = 0;
 	}
 
-	public float AddBuilding()
+	public void AddBuilding()
 	{
 		_currentCost += _increaseByCost;
 		_count++;
