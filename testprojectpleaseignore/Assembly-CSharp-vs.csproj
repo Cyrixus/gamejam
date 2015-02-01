@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BuildingTracker.cs" />
      <Compile Include="Assets\Scripts\FoodClicker.cs" />
      <Compile Include="Assets\Scripts\FoodLabel.cs" />
+     <Compile Include="Assets\Scripts\HutButton.cs" />
      <Compile Include="Assets\Scripts\PopulationLabel.cs" />
      <Compile Include="Assets\Scripts\ResourceTracker.cs" />
  <Reference Include="UnityEngine.UI">
