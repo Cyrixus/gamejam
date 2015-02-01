@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -17,7 +18,7 @@ public class PopulationLabel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(foodLabel != null) {
-			foodLabel.text = ResourceTracker.instance.getPopulation().ToString();
+			foodLabel.text = String.Format("{0,5:N1}", ResourceTracker.instance.getPopulation());
 		}
 	}
 }
