@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HutButton : MonoBehaviour {
+public class TentButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {

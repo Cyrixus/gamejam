@@ -19,7 +19,7 @@ public class BuildingTracker : MonoBehaviour {
 	void Start () {
 		// Add all types of buildings with their ID, Name, Base Cost, Cost Increase, Rate
 		_buildingTracker.Add (new BuildingType(1, "Hut", 2.0f, 1.2f, 1.0f));
-		_buildingTracker.Add (new BuildingType(2, "Farm", 2.0f, 1.2f, 3.0f));
+		_buildingTracker.Add (new BuildingType(2, "Hunters", 2.0f, 1.2f, 3.0f));
 	}
 	
 	// Update is called once per frame
@@ -57,8 +57,8 @@ public class BuildingTracker : MonoBehaviour {
 	}
 
 	public float getFoodProduction() {
-		BuildingType farms = _buildingTracker[1];
-		return farms.Count * farms.GenerationRate;
+		BuildingType hunters = _buildingTracker[1];
+		return hunters.Count * hunters.GenerationRate;
 	}
 
 	public float getPopulationProduction() {

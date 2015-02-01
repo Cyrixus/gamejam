@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FarmButton : MonoBehaviour {
+public class HuntButton : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start() {
