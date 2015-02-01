@@ -18,7 +18,7 @@ public class BuildingTracker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Add all types of buildings with their ID, Name, Base Cost, Cost Increase, Rate
-		_buildingTracker.Add (new BuildingType(1, "Hut", 2.0f, 1.2f, 1.0f));
+		_buildingTracker.Add (new BuildingType(1, "Tent", 2.0f, 1.2f, 1.0f));
 		_buildingTracker.Add (new BuildingType(2, "Hunters", 2.0f, 1.2f, 3.0f));
 	}
 	
