@@ -12,8 +12,9 @@ public class FoodClicker : MonoBehaviour {
 		instance = this;
 	}
 
-	// Text Prefab for displaying clicked amount.
+	// Text Prefab and Canvas for displaying clicked amount.
 	public Text textPrefab;
+	public Canvas canvas;
 
 	// Food Per Click
 	private float foodPerClick;
@@ -28,7 +29,8 @@ public class FoodClicker : MonoBehaviour {
 		ResourceTracker.instance.applyFoodImpulse(foodPerClick);
 
 		// Display a HamText Prefab
-		Text hamText = (Text)Instantiate (textPrefab, transform.position, Quaternion.identity);
-		hamText.text = String.Format ("{0,5:N1}", foodPerClick);
+		Text hamText = (Text)Instantiate (textPrefab);
+		hamText.transform.SetParent (canvas.transform, false);
+		hamText.text = String.Format ("+{0,5:N1} Ham", foodPerClick);
 	}
 }
