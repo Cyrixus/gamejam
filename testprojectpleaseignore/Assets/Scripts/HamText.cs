@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HamText : MonoBehaviour {
 
-	public static float TIME_TO_LIVE = 1.0f;
+	public static float TIME_TO_LIVE = 0.6f;
 	public static float VELOCITY = 5.0f;
 
 	private float elapsedTime;
