@@ -24,8 +24,8 @@ public class Upgrade {
 		}
 	}
 
-	private bool IsActive;
-	public bool _isActive {
+	private bool _isActive;
+	public bool IsActive {
 		get {
 			return _isActive;
 		}
@@ -33,6 +33,7 @@ public class Upgrade {
 			_isActive = value;
 		}
 	}
+
 	public Upgrade (string name, float cost, UpgradeEffect effect) 
 	{
 		_name = name;
@@ -40,5 +41,4 @@ public class Upgrade {
 		_effect = effect;
 		_isActive = false;
 	}
-
 }
