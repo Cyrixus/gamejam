@@ -7,21 +7,36 @@ public class ResourceTracker : MonoBehaviour {
 	private static float STARTING_POP = 1.0f;
 
 	private static float BASE_CONSUMPTION_PER_CAPITA = 1.0f; // 1 population eats 1 food per 1 second.
+	private static float BASE_CONSUMPTION_MULTIPLIER = 1.0f;
+	private static float BASE_FOOD_TO_NEXT_POP = 20.0f;
+	private static float BASE_FOOD_TO_NEXT_POP_MULTIPLIER = 1.2f;
 
 	// Singleton instance
 	public static ResourceTracker instance {get; private set;}
 	
 	private float food; // Current total food
 	private float foodVelocity; // Rate of food production
+	private float foodConsumptionMultiplier;
 
 	private float population; // Current total population
 	private float populationVelocity; // Rate of popluation production
+
+	private float foodNextPop;
+	private float foodNextPopMultiplier;
+
 
 	/** Lifecycle Methods **/
 	// Use this for initialization
 	void Start() {
 		food = STARTING_FOOD;
+		foodVelocity = 0.0f;
+		foodConsumptionMultiplier = BASE_CONSUMPTION_MULTIPLIER;
+
 		population = STARTING_POP;
+		populationVelocity = 0.0f;
+
+		foodNextPop = BASE_FOOD_TO_NEXT_POP;
+		foodNextPopMultiplier = BASE_FOOD_TO_NEXT_POP_MULTIPLIER;
 	}
 	
 	void Awake() {
@@ -32,11 +47,23 @@ public class ResourceTracker : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		// Calculate current consumption
-		float consumption = getConsumption() * Time.deltaTime;
+		float consumption = getFoodConsumption() * foodConsumptionMultiplier * Time.deltaTime;
+
+		// Apply food production velocity
+		food += foodVelocity;
+
+		// Eat
+		food -= consumption;
+
+		// Determine if it's time for a new population member
+		while (food >= foodNextPop) {
+			population += 1;
+			foodNextPop += Mathf.Min(1.0f, foodNextPop * foodNextPopMultiplier); // Always require at least 1 more food than last time.
+		}
 	}
 
 	/** Accessors **/
-	public float getConsumption() {
+	public float getFoodConsumption() {
 		return population * BASE_CONSUMPTION_PER_CAPITA;
 	}
 
