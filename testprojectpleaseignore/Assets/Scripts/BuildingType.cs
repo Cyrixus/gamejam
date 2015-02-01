@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BuildingType : MonoBehaviour {
+public class BuildingType {
 
 	private int _buildingID;
 	public int BuildingID {

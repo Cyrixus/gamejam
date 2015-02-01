@@ -18,12 +18,43 @@ public class BuildingTracker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Add all types of buildings with their ID, Name, Base Cost, Cost Increase, Rate
-		_buildingTracker.Add (new BuildingType(1, "Hut", 4.0f, 1.5f, 1.0f));
+		_buildingTracker.Add (new BuildingType(1, "Hut", 2.0f, 1.5f, 1.0f));
 		_buildingTracker.Add (new BuildingType(2, "Farm", 10.0f, 2.0f, 3.0f));
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void Awake() {
+		// Update our singleton to the current active instance
+		instance = this;
+	}
+
+	// HUTS
+	// Accessors
+	//Placeholders until stuff's sorted
+	public float getCount(int index) {
+		return _buildingTracker[index].Count;
+	}
+
+	public float getCost(int index) {
+		return _buildingTracker[index].CurrentCost;
+	}
+
+	public float getGen(int index) {
+		return _buildingTracker[index].GenerationRate;
+	}
+
+	public bool buyBuilding(int index) {
+		// Check to see if subtracting hutsCost is OK against current pop and if so, do it
+		if (ResourceTracker.instance.applyPopulationImpulse(0 - getCost(index))) {
+			if (ResourceTracker.instance.applyPopulationImpulse(getGen(index))) {
+				_buildingTracker[index].AddBuilding();
+				return true;
+			}
+		}
+		return false;
 	}
 }
