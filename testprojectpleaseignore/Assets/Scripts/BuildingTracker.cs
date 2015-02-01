@@ -18,8 +18,8 @@ public class BuildingTracker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Add all types of buildings with their ID, Name, Base Cost, Cost Increase, Rate
-		_buildingTracker.Add (new BuildingType(1, "Hut", 2.0f, 1.5f, 1.0f));
-		_buildingTracker.Add (new BuildingType(2, "Farm", 10.0f, 2.0f, 3.0f));
+		_buildingTracker.Add (new BuildingType(1, "Hut", 2.0f, 1.2f, 1.0f));
+		_buildingTracker.Add (new BuildingType(2, "Farm", 2.0f, 1.2f, 3.0f));
 	}
 	
 	// Update is called once per frame
@@ -50,11 +50,19 @@ public class BuildingTracker : MonoBehaviour {
 	public bool buyBuilding(int index) {
 		// Check to see if subtracting hutsCost is OK against current pop and if so, do it
 		if (ResourceTracker.instance.applyPopulationImpulse(0 - getCost(index))) {
-			if (ResourceTracker.instance.applyPopulationImpulse(getGen(index))) {
-				_buildingTracker[index].AddBuilding();
-				return true;
-			}
+			_buildingTracker[index].AddBuilding();
+			return true;
 		}
 		return false;
+	}
+
+	public float getFoodProduction() {
+		BuildingType farms = _buildingTracker[1];
+		return farms.Count * farms.GenerationRate;
+	}
+
+	public float getPopulationProduction() {
+		BuildingType huts = _buildingTracker[0];
+		return huts.Count * huts.GenerationRate;
 	}
 }

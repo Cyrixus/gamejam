@@ -47,7 +47,7 @@ public class ResourceTracker : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		// Apply food production velocity
-		food += foodVelocity * Time.deltaTime;
+		food += BuildingTracker.instance.getFoodProduction() * Time.deltaTime;
 
 		// Calculate current consumption & Eat
 		float consumption = getFoodConsumption() * foodConsumptionMultiplier * Time.deltaTime;
@@ -62,7 +62,7 @@ public class ResourceTracker : MonoBehaviour {
 			foodNextPop += Mathf.Max(1.0f, foodNextPop * foodNextPopMultiplier); // Always require at least 1 more food than last time.
 		}
 
-		food += populationVelocity * Time.deltaTime;
+		population += BuildingTracker.instance.getPopulationProduction() * Time.deltaTime;
 	}
 
 	/** Accessors **/
