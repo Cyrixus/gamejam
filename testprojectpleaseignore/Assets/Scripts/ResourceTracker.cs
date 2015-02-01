@@ -61,6 +61,8 @@ public class ResourceTracker : MonoBehaviour {
 			population += 1;
 			foodNextPop += Mathf.Max(1.0f, foodNextPop * foodNextPopMultiplier); // Always require at least 1 more food than last time.
 		}
+
+		food += populationVelocity * Time.deltaTime;
 	}
 
 	/** Accessors **/
