@@ -24,7 +24,6 @@ public class FuelCanisterBehavior : MonoBehaviour
 	
 	void OnCollisionEnter2D (Collision2D collisionInfo)
 	{
-		Debug.Log (collisionInfo.collider.tag);
 		if (collisionInfo.collider.tag == "Player")
 		{
 			FuelTracker.instance.gainFuel(EnergyLevel);

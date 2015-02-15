@@ -1294,6 +1294,7 @@ GameObject:
   - 224: {fileID: 1992222528}
   - 114: {fileID: 1992222527}
   - 114: {fileID: 1992222529}
+  - 82: {fileID: 1992222530}
   m_Layer: 5
   m_Name: Game State
   m_TagString: Untagged
@@ -1319,7 +1320,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1992222526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: .0188323911, y: .0188323911, z: .0188323911}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1341,6 +1342,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShipPrefab: {fileID: 118776, guid: a4c2865685f68ec4e8c0e259823c70a3, type: 2}
+--- !u!82 &1992222530
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992222526}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: a0415a07954b49d4499077071d46325e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .800000012
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &2057989905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1493,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowEnergyPrefab: {fileID: 150278, guid: 67a2e7315415325468538f4b8f905753, type: 2}
-  lowEnergyChance: 1
   midEnergyPrefab: {fileID: 150278, guid: 29f270781f3a9ad45be465bad18edefe, type: 2}
   midEnergyChance: .300000012
   highEnergyPrefab: {fileID: 150278, guid: 5399b9809ed2bdb449864250a949071e, type: 2}

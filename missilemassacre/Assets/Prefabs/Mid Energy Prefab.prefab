@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 450278}
   - 212: {fileID: 21250278}
   - 50: {fileID: 5050278}
-  - 114: {fileID: 11450278}
   - 58: {fileID: 5850278}
+  - 114: {fileID: 11450278}
   m_Layer: 10
   m_Name: Mid Energy Prefab
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FallRate: 6
-  EnergyLevel: .100000001
+  EnergyLevel: .150000006
   timeToLive: 5
 --- !u!212 &21250278
 SpriteRenderer:

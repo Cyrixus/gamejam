@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FallRate: 3
-  EnergyLevel: .200000003
+  EnergyLevel: .25
   timeToLive: 5
 --- !u!212 &21250278
 SpriteRenderer:
