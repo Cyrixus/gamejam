@@ -21,12 +21,14 @@ public class FuelTracker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentFuel -= fuelDecRate;
-		if (currentFuel < 0) 
-			currentFuel = 0;
+		currentFuel = Mathf.Max(0, (currentFuel - fuelDecRate));
 	}
 
-	public float getFuel () {
+	public float getCurrentFuel () {
 		return currentFuel;
+	}
+
+	public void gainFuel (float fuelTankAmt) {
+		currentFuel = Mathf.Min(1f, (currentFuel + fuelTankAmt));
 	}
 }
