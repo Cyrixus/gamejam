@@ -101,12 +101,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 294413026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bfd3af179b19e43b7df13d3f7d4bf9, type: 3}
+  m_Script: {fileID: 11500000, guid: ae39da6c8e7fd2f45b43594a9456e60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRight: 100
-  moveLeft: 97
-  speed: 7
+  moveRight: 275
+  moveLeft: 276
+  speed: 4
 --- !u!212 &294413028
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8417f0d82b775744d90858e209a24794, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1537226774abeed40a7374de7d1a6cd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &294413029
 Transform:
@@ -147,7 +147,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 294413026}
-  m_Mass: 1
+  m_Mass: 99999
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -165,8 +165,47 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1.70000005, y: 1.95000005}
-  m_Center: {x: -.0549999997, y: .360000014}
+  m_Size: {x: 1.45000005, y: 1.23000002}
+  m_Center: {x: 0, y: 0}
+--- !u!1 &387165247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 387165248}
+  - 61: {fileID: 387165249}
+  m_Layer: 0
+  m_Name: EnergyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &387165248
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387165247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.55000019, z: 0}
+  m_LocalScale: {x: 17, y: .100000001, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+--- !u!61 &387165249
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 387165247}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &431737234
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +442,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1147202287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1147202289}
+  - 114: {fileID: 1147202288}
+  m_Layer: 0
+  m_Name: Fuel Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1147202288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147202287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcce0b5efe31bb94eb6f676db63b14e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyPrefab: {fileID: 150278, guid: 2e15137e759be174ab99a115640bb46f, type: 2}
+  node: {fileID: 387165248}
+--- !u!4 &1147202289
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1147202287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &1635986853
 GameObject:
   m_ObjectHideFlags: 0
