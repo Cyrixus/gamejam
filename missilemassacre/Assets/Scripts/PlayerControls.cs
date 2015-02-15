@@ -10,19 +10,14 @@ public class PlayerControls : MonoBehaviour
 	void Update ()
 	{
 		// move the ship up if the moveUp key is pressed,
-		if (Input.GetKey(moveRight))
-		{
-			gameObject.rigidbody2D.velocity = new Vector3(speed, 0f, 0f);
+		if (Input.GetKey (moveRight)) {
+			gameObject.rigidbody2D.velocity = Vector3.right * speed;
 		} 
 		// move the ship down if moveDown is pressed
-		else if (Input.GetKey(moveLeft))
-		{
-			gameObject.rigidbody2D.velocity = new Vector3(-speed, 0f, 0f);		
-		}
-		// slowly push ship back to starting position if nothing is pressed
-		else
-		{
-			gameObject.rigidbody2D.velocity = new Vector3(0f, 0f, 0f);	
+		else if (Input.GetKey (moveLeft)) {
+			gameObject.rigidbody2D.velocity = Vector3.left * speed;		
+		} else {
+			gameObject.rigidbody2D.velocity = Vector3.zero;
 		}
 	}
 }

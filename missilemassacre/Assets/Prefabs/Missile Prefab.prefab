@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 103946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ea7523dce20a3c4c80005c685ea1f16, type: 3}
+  m_Script: {fileID: 11500000, guid: 2034cf4e55e58e84aaa0d3459d5f74ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wobbleDegree: 6
@@ -62,7 +62,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e76852b47e6a12f4d87c0c5939f8b7f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97457e0a23f410747be2fcd64351dbab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5050278}
   - 58: {fileID: 5850278}
   - 114: {fileID: 11408802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: High Energy Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 150278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -37,7 +37,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150278}
-  m_Mass: 99999
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -65,11 +65,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 150278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b90787167b31c8f4daa6117ddcf9bf7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 98d8a4f63782ac644958c8742758bc5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FallRate: 3
-  EnergyLevel: .300000012
+  EnergyLevel: .200000003
+  timeToLive: 5
 --- !u!212 &21250278
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,7 +91,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 122c66ec8416b64489ddc957e730fe30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dd75ec1ce3c99145bf642dab8051174, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

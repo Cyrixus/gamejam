@@ -6,17 +6,29 @@ public class FuelCanisterBehavior : MonoBehaviour
 	public float FallRate;
 	public float EnergyLevel;
 
-	public void DropItLikeItsHot() 
-	{
+	public float timeToLive = 5.0f; // By default, live for 5 seconds
+
+	private float elapsed = 0.0f;
+
+	public void Start() {
+		elapsed = 0.0f;
 		gameObject.rigidbody2D.velocity = new Vector2(0f, -this.FallRate);
 	}
+
+	public void Update() {
+		elapsed += Time.deltaTime;
+		if (elapsed > timeToLive) {
+			Destroy (gameObject);
+		}
+	}
 	
-	private void OnTriggerEnter2D (Collider2D hitBox)
+	void OnCollisionEnter2D (Collision2D collisionInfo)
 	{
-		if (hitBox.name.Equals("PlayerShip"))
+		Debug.Log (collisionInfo.collider.tag);
+		if (collisionInfo.collider.tag == "Player")
 		{
-			Debug.Log("Ship energy +" + this.EnergyLevel.ToString () + "!");
-			Destroy(this.transform);
+			FuelTracker.instance.gainFuel(EnergyLevel);
+			Destroy(gameObject);
 		}
 	}
 }
