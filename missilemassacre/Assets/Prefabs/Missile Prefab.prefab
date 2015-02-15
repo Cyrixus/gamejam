@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403946}
   - 212: {fileID: 21206658}
+  - 114: {fileID: 11458972}
   m_Layer: 0
   m_Name: Missile Prefab
   m_TagString: Untagged
@@ -28,6 +29,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11458972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2034cf4e55e58e84aaa0d3459d5f74ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wobbleDegree: 6
+  frequency: .400000006
 --- !u!212 &21206658
 SpriteRenderer:
   m_ObjectHideFlags: 1
