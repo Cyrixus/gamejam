@@ -11,7 +11,7 @@ public class FuelTracker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentFuel = 1.0f;		//100% Fuel
-		fuelDecRate = .001f;
+		fuelDecRate = .1f;
 	}
 
 	void Awake() {
@@ -21,7 +21,7 @@ public class FuelTracker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currentFuel = Mathf.Max(0, (currentFuel - fuelDecRate));
+		currentFuel = Mathf.Max(0, currentFuel - (fuelDecRate * Time.deltaTime));
 	}
 
 	public float getCurrentFuel () {
@@ -30,5 +30,9 @@ public class FuelTracker : MonoBehaviour {
 
 	public void gainFuel (float fuelTankAmt) {
 		currentFuel = Mathf.Min(1f, (currentFuel + fuelTankAmt));
+	}
+
+	public void setFuel (float fuel) {
+		currentFuel = Mathf.Clamp (fuel, 0.0f, 1.0f);
 	}
 }

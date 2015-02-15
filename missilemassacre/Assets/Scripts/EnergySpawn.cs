@@ -43,6 +43,9 @@ public class EnergySpawn : MonoBehaviour {
 				spawnLowEnergy();
 			}
 
+			// Clamp lastSpawnPosition
+			lastSpawnPosition.x = Mathf.Clamp(lastSpawnPosition.x, transform.position.x - transform.localScale.x * 0.5f, 
+			                                  transform.position.x + transform.localScale.x * 0.5f);
 			elapsed %= frequency;
 		}
 	}
