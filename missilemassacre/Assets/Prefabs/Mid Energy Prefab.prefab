@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11450278}
   - 58: {fileID: 5850278}
   m_Layer: 0
-  m_Name: FuelCanister
+  m_Name: Mid Energy Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_FixedAngle: 0
+  m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -68,10 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90787167b31c8f4daa6117ddcf9bf7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallRate: 0
-  StartPosition: {x: 0, y: 0, z: 0}
-  EnergyLevel: 0
-  Sprite: {fileID: 0}
+  FallRate: 2
+  EnergyLevel: .200000003
 --- !u!212 &21250278
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,7 +90,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 58f76123eec25464ba3ac5dbcd906caf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1888d3fd6c1b0a4cb1d68993178ba47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
