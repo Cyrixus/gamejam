@@ -167,6 +167,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11458972, guid: 0967e239760c84b4a83caa1631a063b4, type: 2}
+      propertyPath: wanderAmount
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0967e239760c84b4a83caa1631a063b4, type: 2}
   m_RootGameObject: {fileID: 161590543}
@@ -203,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wobbleDegree: 6
   frequency: .400000006
+  wanderAmount: .100000001
 --- !u!212 &161590545
 SpriteRenderer:
   m_ObjectHideFlags: 0
