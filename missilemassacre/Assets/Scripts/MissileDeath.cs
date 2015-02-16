@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MissileDeath : MonoBehaviour {
+public class MissileDeath : MonoBehaviour
+{
 	/** Public GUI Variables **/
 	public int initialMissiles = 10;
 	public int idealMissileCount = 50;
@@ -18,38 +19,46 @@ public class MissileDeath : MonoBehaviour {
 
 	/** Lifecycle Methods **/
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		elapsed = Random.value;
 
 		while (missiles.Count < initialMissiles) {
-			buildMissile();
+			buildMissile ();
 		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		elapsed += Time.deltaTime;
 
 		if (elapsed > missileFrequency && missiles.Count < idealMissileCount) {
-			buildMissile();
+			buildMissile ();
 			elapsed %= missileFrequency;
 		}
 	}
 
 	/** Missile builder **/
-	Transform buildMissile() {
+	Transform buildMissile ()
+	{
+		float offScreenOffset = 2f;
 		Vector3 position = transform.position;
 		position.x += (Random.value * transform.localScale.x) - (transform.localScale.x / 2.0f);
-		position.y += (Random.value * transform.localScale.y) - (transform.localScale.y / 2.0f);
+		position.y += (Random.value * transform.localScale.y) - (transform.localScale.y / 2.0f) - offScreenOffset;
 		
 		// Create a new missile prefab and add it to the array of missiles
-		Transform missile = Instantiate(missilePrefab, position, Quaternion.identity) as Transform;
+		Transform missile = Instantiate (missilePrefab, position, Quaternion.identity) as Transform;
+
+		position.y += offScreenOffset;
+
+		missile.gameObject.GetComponent<MissileWobble> ().holdPosition = position;
 
 		// Scale Randomly between 1.0f and 2.0f
 		float scalar = Random.value;
-		missile.transform.localScale = new Vector3(1.0f + scalar, 1.0f + scalar, 1.0f);
+		missile.transform.localScale = new Vector3 (1.0f + scalar, 1.0f + scalar, 1.0f);
 
-		missiles.Add(missile);
+		missiles.Add (missile);
 		return missile;
 	}
 }

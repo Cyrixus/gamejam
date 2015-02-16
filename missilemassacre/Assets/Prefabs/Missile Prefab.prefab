@@ -72,6 +72,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wobbleDegree: 6
   frequency: .400000006
+  wanderAmount: 1
+  toPositionSpeed: .100000001
 --- !u!198 &19866382
 ParticleSystem:
   m_ObjectHideFlags: 1

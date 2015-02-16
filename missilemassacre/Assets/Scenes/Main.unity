@@ -208,6 +208,7 @@ MonoBehaviour:
   wobbleDegree: 6
   frequency: .400000006
   wanderAmount: .100000001
+  toPositionSpeed: .100000001
 --- !u!212 &161590545
 SpriteRenderer:
   m_ObjectHideFlags: 0
